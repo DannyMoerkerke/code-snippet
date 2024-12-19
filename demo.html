@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="module" src="code-snippet.js"></script>
+</head>
+<body>
+    <code-snippet>
+        <span lang="javascript">
+class LinkedList {
+    constructor() {
+        const head = { value: null, prev: null, next: null };
+        const tail = { value: null, prev: head, next: null };
+        head.next = tail;
+
+        this.head = head;
+        this.tail = tail;
+        this.length = 0;
+    }
+
+    addAfter(node, value) {
+        const next = node.next;
+
+        const newNode = { value, prev: node, next };
+        node.next = newNode;
+        next.prev = newNode;
+        this.length++;
+
+        return newNode;
+    }
+
+    removeRange(node, count) {
+        let next = node.next;
+        let i = 0;
+        for (; i < count && next !== this.tail; i++) {
+            next = next.next;
+        }
+        node.next = next;
+        next.prev = node;
+        this.length -= i;
+    }
+
+    toArray() {
+        const array = [];
+        let node = this.head.next;
+        while (node !== this.tail) {
+            array.push(node.value);
+            node = node.next;
+        }
+        return array;
+    }
+}
+        </span>
+
+        <span lang="css">
+::highlight(parameter) {
+  color: #1a1a1a;
+}
+
+::highlight(comment), ::highlight(prolog), ::highlight(doctype), ::highlight(cdata) {
+  color: slategray;
+}
+
+::highlight(punctuation) {
+  color: #999;
+}
+
+::highlight(property),
+::highlight(tag),
+::highlight(boolean),
+::highlight(number),
+::highlight(constant),
+::highlight(symbol),
+::highlight(deleted),
+::highlight(class-name) {
+  color: #905;
+}
+        </span>
+    </code-snippet>
+</body>
+</html>
