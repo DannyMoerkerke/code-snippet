@@ -139,9 +139,8 @@ class CodeSnippet extends HTMLElement {
         ::slotted(*) {
           border: 1px solid #cecece;
           width: 80vw;
-          height: 50vh;
+          height: 30vh;
           margin-inline: auto;
-          
           display: block;
           white-space: pre;
           padding: 1em;
