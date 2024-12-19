@@ -1,3 +1,7 @@
+/*
+* The code for the LinkedList class and the code for tokenization of the code snippets
+* was taken and adapted from Prism.js, https://prismjs.com
+* */
 import {markup} from './languages/markup.js';
 import {css} from './languages/css.js';
 import {javascript} from './languages/javascript.js';
@@ -135,7 +139,7 @@ class CodeSnippet extends HTMLElement {
         ::slotted(*) {
           border: 1px solid #cecece;
           width: 80vw;
-          height: 80vh;
+          height: 50vh;
           margin-inline: auto;
           
           display: block;
